@@ -1,0 +1,62 @@
+<view class="page">
+  <view class="header">
+    <text class="header-title">🚗 我要卖车</text>
+    <text class="header-sub">填写信息，免费估价，快速出售</text>
+  </view>
+
+  <view class="form-card">
+    <view class="form-item">
+      <text class="form-label">手机号 <text class="required">*</text></text>
+      <input
+        class="form-input"
+        type="number"
+        maxlength="11"
+        placeholder="请输入您的手机号"
+        value="{{form.phone}}"
+        bindinput="onPhoneInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">车辆品牌 <text class="required">*</text></text>
+      <picker mode="selector" range="{{brands}}" value="{{brandIndex}}" bindchange="onBrandChange">
+        <view class="form-picker">
+          <text>{{form.brand}}</text>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">上牌年份 <text class="required">*</text></text>
+      <picker mode="selector" range="{{years}}" value="{{yearIndex}}" bindchange="onYearChange">
+        <view class="form-picker">
+          <text>{{form.year}} 年</text>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">行驶里程 <text class="required">*</text></text>
+      <view class="input-with-unit">
+        <input
+          class="form-input"
+          type="digit"
+          placeholder="请输入里程数"
+          value="{{form.mileage}}"
+          bindinput="onMileageInput"
+        />
+        <text class="unit">万 km</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-btn" bindtap="onSubmit">
+    <text>免费提交估价</text>
+  </view>
+
+  <view class="tips">
+    <text>提交后，我们的专业顾问将在1小时内与您联系</text>
+  </view>
+</view>

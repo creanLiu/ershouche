@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="header">
+    <text class="header-title">🔥 特价车型</text>
+    <text class="header-sub">限时优惠，先到先得</text>
+  </view>
+
+  <view wx:if="{{list.length === 0}}" class="empty">
+    <text>暂无特价车辆</text>
+  </view>
+
+  <view class="vehicle-list">
+    <view
+      wx:for="{{list}}"
+      wx:key="id"
+      class="vehicle-card"
+      data-id="{{item.id}}"
+      bindtap="onVehicleTap"
+    >
+      <view class="special-badge">特价</view>
+      <image class="vehicle-cover" src="{{item.coverImageUrl}}" mode="aspectFill" />
+      <view class="vehicle-info">
+        <text class="vehicle-name">{{item.brand}} {{item.model}}</text>
+        <text class="vehicle-params">{{item.year}}年 / {{item.mileageW}}万km / {{item.displacement}} / {{item.city}}</text>
+        <view class="vehicle-price">
+          <text class="price-num">{{item.priceWan}}</text>
+          <text class="price-unit">万元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

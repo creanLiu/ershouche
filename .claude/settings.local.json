@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create vite@latest usedcar-admin -- --template vue-ts)",
+      "Bash(npm run build)",
+      "Bash(ls /Users/creanliu/VibeCoding/ershouche/usedcar-admin/tsconfig*.json)",
+      "Bash(npm install)",
+      "Bash(mvn compile -q)",
+      "Bash(__NEW_LINE_f7d3e01f2a67a414__ cat)",
+      "Bash(mvn compile)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw; print\\(''PIL available''\\)\")",
+      "Bash(python3 -c \"import struct, zlib; print\\(''struct+zlib ok''\\)\")",
+      "Bash(xargs sed -i '' 's/background: #f5f5f5;/background: var\\(--color-bg-page\\);/g; s/background: #f5f7fa;/background: var\\(--color-bg-page\\);/g')",
+      "Bash(find /Users/creanliu/VibeCoding/ershouche/usedcar-miniapp/pages -name \"*.wxss\" -exec sed -i '' 's/background: #f5f5f5;/background: var\\(--color-bg-page\\);/g' {} ;)",
+      "Bash(find /Users/creanliu/VibeCoding/ershouche/usedcar-miniapp/pages -name \"*.wxss\" -exec sed -i '' 's/background: #f5f7fa;/background: var\\(--color-bg-page\\);/g' {} ;)",
+      "Bash(identify \"/Users/creanliu/Desktop/GR/未命名文件夹/WechatIMG102.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/creanliu/Desktop/GR/未命名文件夹/WechatIMG102.jpg\")",
+      "Bash(python3 -:*)"
+    ]
+  }
+}

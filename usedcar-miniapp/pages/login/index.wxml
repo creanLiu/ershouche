@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- Logo区域 -->
+  <view class="logo-area">
+    <view class="logo-circle">
+      <text class="logo-icon">车</text>
+    </view>
+    <text class="logo-title">二手车平台</text>
+    <text class="logo-sub">安心买卖，品质保障</text>
+  </view>
+
+  <!-- 说明文字 -->
+  <view class="desc-area">
+    <text class="desc-text">登录后享受更多专属服务</text>
+    <text class="desc-sub">收藏车辆 · 消息通知 · 一键联系</text>
+  </view>
+
+  <!-- 登录按钮 -->
+  <view class="btn-area">
+    <button
+      class="login-btn {{loading ? 'loading' : ''}}"
+      open-type="getPhoneNumber"
+      bindgetphonenumber="onGetPhoneNumber"
+      disabled="{{loading}}"
+    >
+      <text class="btn-icon">📱</text>
+      <text>{{loading ? '登录中...' : '微信手机号一键登录'}}</text>
+    </button>
+  </view>
+
+  <!-- 用户协议 -->
+  <view class="agree-area">
+    <checkbox-group bindchange="onAgreeChange">
+      <label class="agree-label">
+        <checkbox value="agree" checked="{{agreed}}" color="#1E90FF" />
+        <text class="agree-text">我已阅读并同意</text>
+        <text class="agree-link">《用户协议》</text>
+        <text class="agree-text">和</text>
+        <text class="agree-link">《隐私政策》</text>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <!-- 开发测试：模拟登录 -->
+  <view class="dev-area">
+    <text class="dev-btn" bindtap="onDevLogin">🛠 模拟登录（开发测试）</text>
+  </view>
+
+  <!-- 暂不登录 -->
+  <view class="skip-area">
+    <text class="skip-btn" bindtap="onSkipLogin">暂不登录</text>
+  </view>
+</view>

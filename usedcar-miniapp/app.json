@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/vehicle-list/index",
+    "pages/vehicle-detail/index",
+    "pages/search/index",
+    "pages/special/index",
+    "pages/sell-car/index",
+    "pages/favorite/index",
+    "pages/profile/index",
+    "pages/login/index",
+    "pages/browse-history/index",
+    "pages/message/index",
+    "pages/order/index",
+    "pages/setting/index"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1E90FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/vehicle-list/index",
+        "text": "找车",
+        "iconPath": "assets/icons/search.png",
+        "selectedIconPath": "assets/icons/search-active.png"
+      },
+      {
+        "pagePath": "pages/sell-car/index",
+        "text": "估价",
+        "iconPath": "assets/icons/valuation.png",
+        "selectedIconPath": "assets/icons/valuation-active.png"
+      },
+      {
+        "pagePath": "pages/special/index",
+        "text": "特价车型",
+        "iconPath": "assets/icons/special.png",
+        "selectedIconPath": "assets/icons/special-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/icons/profile.png",
+        "selectedIconPath": "assets/icons/profile-active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarTitleText": "二手车平台",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F7FA"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

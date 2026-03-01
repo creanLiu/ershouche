@@ -1,0 +1,61 @@
+<view class="page">
+  <!-- 状态 Tabs -->
+  <view class="tabs">
+    <view
+      class="tab {{activeTab === item.key ? 'tab-active' : ''}}"
+      wx:for="{{tabs}}"
+      wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onTabTap"
+    >
+      <text>{{item.label}}</text>
+      <view class="tab-line" wx:if="{{activeTab === item.key}}"></view>
+    </view>
+  </view>
+
+  <!-- 订单列表 -->
+  <view class="order-list" wx:if="{{list.length > 0}}">
+    <view
+      class="order-card"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onOrderTap"
+    >
+      <!-- 卡片头部：订单号 + 状态 -->
+      <view class="card-header">
+        <text class="order-id">订单号：{{item.id}}</text>
+        <text class="status-badge status-{{item.status}}">{{item.statusLabel}}</text>
+      </view>
+
+      <!-- 车辆信息 -->
+      <view class="car-row">
+        <image class="car-img" src="{{item.image}}" mode="aspectFill" />
+        <view class="car-info">
+          <text class="car-title">{{item.title}}</text>
+          <view class="car-tags">
+            <text class="car-tag">{{item.year}}</text>
+            <text class="car-tag">{{item.mileage}}</text>
+            <text class="car-tag">{{item.location}}</text>
+          </view>
+          <view class="price-row">
+            <text class="price-num">{{item.price}}</text>
+            <text class="price-unit">万元</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 卡片底部：时间 + 操作 -->
+      <view class="card-footer">
+        <text class="create-time">{{item.createTime}}</text>
+        <text class="contact-btn" catchtap="onContactSeller" wx:if="{{item.status !== 'done'}}">联系卖家</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{list.length === 0}}">
+    <text class="empty-state-icon">📋</text>
+    <text class="empty-state-text">暂无相关订单</text>
+  </view>
+</view>

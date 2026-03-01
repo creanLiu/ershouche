@@ -1,0 +1,123 @@
+<view class="page">
+
+  <!-- 筛选栏 -->
+  <view class="filter-bar">
+    <view class="filter-toggle" bindtap="toggleFilter">
+      <text class="filter-icon">⚙</text>
+      <text class="filter-label">筛选</text>
+      <text class="filter-arrow {{filterOpen ? 'arrow-up' : ''}}">▼</text>
+    </view>
+    <view class="sort-tabs">
+      <view
+        wx:for="{{sortOptions}}"
+        wx:key="value"
+        class="sort-tab {{sortType === item.value ? 'sort-tab-active' : ''}}"
+        data-sort="{{item.value}}"
+        bindtap="onSortTap"
+      >
+        <text>{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 筛选面板 -->
+  <view class="filter-panel {{filterOpen ? 'filter-panel-open' : ''}}">
+    <view class="filter-section">
+      <text class="filter-section-title">品牌</text>
+      <view class="filter-options">
+        <view
+          wx:for="{{brandOptions}}"
+          wx:key="*this"
+          class="filter-option {{selectedBrands.indexOf(item) >= 0 ? 'filter-option-active' : ''}}"
+          data-brand="{{item}}"
+          bindtap="onBrandTap"
+        >
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="filter-section">
+      <text class="filter-section-title">价格区间</text>
+      <view class="filter-options">
+        <view
+          wx:for="{{priceRangeOptions}}"
+          wx:key="value"
+          class="filter-option {{priceRange === item.value ? 'filter-option-active' : ''}}"
+          data-value="{{item.value}}"
+          bindtap="onPriceRangeTap"
+        >
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="filter-section">
+      <text class="filter-section-title">车龄</text>
+      <view class="filter-options">
+        <view
+          wx:for="{{ageRangeOptions}}"
+          wx:key="value"
+          class="filter-option {{ageRange === item.value ? 'filter-option-active' : ''}}"
+          data-value="{{item.value}}"
+          bindtap="onAgeRangeTap"
+        >
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="filter-section">
+      <text class="filter-section-title">里程</text>
+      <view class="filter-options">
+        <view
+          wx:for="{{mileageRangeOptions}}"
+          wx:key="value"
+          class="filter-option {{mileageRange === item.value ? 'filter-option-active' : ''}}"
+          data-value="{{item.value}}"
+          bindtap="onMileageRangeTap"
+        >
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="filter-actions">
+      <view class="btn-reset" bindtap="onFilterReset"><text>重置</text></view>
+      <view class="btn-confirm" bindtap="onFilterConfirm"><text>确定</text></view>
+    </view>
+  </view>
+
+  <!-- 单列车辆列表 -->
+  <view class="vehicle-list">
+    <view
+      wx:for="{{list}}"
+      wx:key="id"
+      class="vehicle-card"
+      data-id="{{item.id}}"
+      bindtap="onVehicleTap"
+    >
+      <image class="card-image" src="{{item.coverImageUrl}}" mode="aspectFill" />
+      <view class="card-body">
+        <text class="card-name">{{item.brand}} {{item.model}}</text>
+        <text class="card-params">{{item.year}}年 / {{item.mileageW}}万km / {{item.displacement}} / {{item.city}}</text>
+        <view class="card-bottom">
+          <view class="card-price">
+            <text class="price-num">{{item.priceWan}}</text>
+            <text class="price-unit">万元</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{list.length === 0 && !loading}}" class="empty-state">
+    <text class="empty-state-icon">🚗</text>
+    <text class="empty-state-text">暂无符合条件的车辆</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-tip">
+    <text>加载中...</text>
+  </view>
+
+  <view wx:if="{{!hasMore && list.length > 0}}" class="no-more-tip">
+    <text>已加载全部</text>
+  </view>
+
+</view>

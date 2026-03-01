@@ -1,0 +1,78 @@
+<view class="page">
+
+  <!-- 搜索头部 -->
+  <view class="search-header">
+    <view class="search-input-wrap">
+      <text class="search-icon">🔍</text>
+      <input
+        class="search-input"
+        placeholder="搜索品牌、车型"
+        placeholder-class="search-placeholder"
+        value="{{keyword}}"
+        bindinput="onInputChange"
+        bindfocus="onInputFocus"
+        bindblur="onInputBlur"
+        confirm-type="search"
+        bindconfirm="onSearch"
+        auto-focus
+      />
+      <text class="clear-icon" wx:if="{{keyword}}" bindtap="onClearInput">✕</text>
+    </view>
+    <text class="search-btn" bindtap="onSearch">搜索</text>
+  </view>
+
+  <!-- 联想下拉 -->
+  <view class="suggest-list" wx:if="{{showSuggest && suggestList.length > 0}}">
+    <view
+      class="suggest-item"
+      wx:for="{{suggestList}}"
+      wx:key="index"
+      data-word="{{item}}"
+      bindtap="onSuggestTap"
+    >
+      <text class="suggest-icon">🔍</text>
+      <text class="suggest-text">{{item}}</text>
+      <text class="suggest-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="content" wx:if="{{!showSuggest}}">
+
+    <!-- 历史搜索 -->
+    <view class="section" wx:if="{{historyList.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">历史搜索</text>
+        <text class="section-action" bindtap="onClearHistory">清空</text>
+      </view>
+      <view class="history-tags">
+        <view class="history-tag" wx:for="{{historyList}}" wx:key="index">
+          <text class="history-tag-text" data-word="{{item}}" bindtap="onTagTap">{{item}}</text>
+          <text class="history-tag-del" data-word="{{item}}" catchtap="onDeleteHistory">×</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 热门搜索 -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">热门搜索</text>
+        <text class="section-sub">实时更新</text>
+      </view>
+      <view class="hot-list">
+        <view
+          class="hot-item"
+          wx:for="{{hotList}}"
+          wx:key="index"
+          data-word="{{item}}"
+          bindtap="onTagTap"
+        >
+          <text class="hot-rank hot-rank-{{index < 3 ? 'top' : 'normal'}}">{{index + 1}}</text>
+          <text class="hot-text">{{item}}</text>
+          <text class="hot-fire" wx:if="{{index < 3}}">🔥</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

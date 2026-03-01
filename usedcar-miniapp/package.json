@@ -1,0 +1,8 @@
+{
+  "name": "usedcar-miniapp",
+  "version": "1.0.0",
+  "description": "二手车平台小程序",
+  "dependencies": {
+    "@vant/weapp": "^1.10.24"
+  }
+}

@@ -1,0 +1,47 @@
+<view class="container">
+  <!-- Tab 切换 -->
+  <view class="tabs">
+    <view
+      class="tab {{activeTab === item.key ? 'tab-active' : ''}}"
+      wx:for="{{tabs}}"
+      wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onTabTap"
+    >
+      <text>{{item.label}}</text>
+      <view class="tab-line" wx:if="{{activeTab === item.key}}"></view>
+    </view>
+  </view>
+
+  <!-- 消息列表 -->
+  <view class="msg-list">
+    <view
+      class="msg-item"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onMsgTap"
+    >
+      <!-- 图标 -->
+      <view class="msg-icon-wrap">
+        <text class="msg-icon">{{item.icon}}</text>
+        <view class="unread-dot" wx:if="{{item.unread}}"></view>
+      </view>
+
+      <!-- 内容 -->
+      <view class="msg-body">
+        <view class="msg-header">
+          <text class="msg-title {{item.unread ? 'unread' : ''}}">{{item.title}}</text>
+          <text class="msg-time">{{item.time}}</text>
+        </view>
+        <text class="msg-content">{{item.content}}</text>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty" wx:if="{{list.length === 0}}">
+      <text class="empty-icon">📭</text>
+      <text class="empty-text">暂无消息</text>
+    </view>
+  </view>
+</view>

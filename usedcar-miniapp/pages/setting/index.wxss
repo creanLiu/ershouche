@@ -1,0 +1,25 @@
+page { background: var(--color-bg-page); }
+.container { min-height: 100vh; padding: 24rpx 0; }
+.menu-list {
+  background: var(--color-bg-card);
+  margin: 0 0 24rpx;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 36rpx 40rpx;
+  border-bottom: 1rpx solid var(--color-divider);
+  gap: 20rpx;
+}
+.menu-item:last-child { border-bottom: none; }
+.menu-icon {
+  font-size: 36rpx;
+  width: 44rpx;
+  text-align: center;
+  flex-shrink: 0;
+}
+.menu-title { flex: 1; font-size: 30rpx; color: var(--color-text-primary); }
+.menu-arrow { font-size: 36rpx; color: var(--color-border); }
+.version { text-align: center; font-size: 24rpx; color: var(--color-text-hint); padding: 40rpx 0; }

@@ -1,0 +1,130 @@
+page {
+  background: var(--color-bg-page);
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120rpx;
+  margin-bottom: 80rpx;
+}
+.logo-circle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(30,144,255,0.3);
+}
+.logo-icon {
+  font-size: 72rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.logo-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: 12rpx;
+}
+.logo-sub {
+  font-size: 26rpx;
+  color: var(--color-text-hint);
+}
+
+/* 说明 */
+.desc-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80rpx;
+}
+.desc-text {
+  font-size: 32rpx;
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+}
+.desc-sub {
+  font-size: 26rpx;
+  color: var(--color-text-hint);
+  letter-spacing: 2rpx;
+}
+
+/* 按钮 */
+.btn-area {
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.login-btn {
+  width: 100%;
+  height: 96rpx;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  border-radius: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  border: none;
+  box-shadow: 0 8rpx 24rpx rgba(30,144,255,0.35);
+}
+.login-btn.loading { opacity: 0.7; }
+.btn-icon { font-size: 36rpx; }
+
+/* 协议 */
+.agree-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+.agree-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.agree-text {
+  font-size: 24rpx;
+  color: var(--color-text-hint);
+}
+.agree-link {
+  font-size: 24rpx;
+  color: var(--color-primary);
+}
+
+/* 开发测试 */
+.dev-area { margin-bottom: 24rpx; }
+.dev-btn {
+  font-size: 26rpx;
+  color: #fa8c16;
+  padding: 16rpx 32rpx;
+  border: 1rpx dashed #fa8c16;
+  border-radius: 32rpx;
+}
+
+/* 暂不登录 */
+.skip-area {
+  margin-top: auto;
+  padding-bottom: 80rpx;
+}
+.skip-btn {
+  font-size: 28rpx;
+  color: var(--color-text-hint);
+  padding: 20rpx 40rpx;
+}

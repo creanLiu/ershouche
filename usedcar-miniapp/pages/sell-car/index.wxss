@@ -1,0 +1,74 @@
+page { background: #F5F7FA; }
+
+.header {
+  background: linear-gradient(135deg, #4169E1, #1E90FF);
+  padding: 28rpx 32rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.header-title { color: #fff; font-size: 36rpx; font-weight: 700; }
+.header-sub { color: rgba(255,255,255,0.85); font-size: 24rpx; margin-top: 6rpx; }
+
+.form-card {
+  background: #fff;
+  margin: 24rpx 24rpx 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+}
+
+.form-item {
+  padding: 28rpx 32rpx;
+  border-bottom: 1rpx solid #F0F2F5;
+}
+.form-item:last-child { border-bottom: none; }
+
+.form-label {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 14rpx;
+}
+.required { color: #FF4500; }
+
+.form-input {
+  width: 100%;
+  font-size: 30rpx;
+  color: #1a1a1a;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.form-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+}
+.form-picker text:first-child { font-size: 30rpx; color: #1a1a1a; }
+.picker-arrow { font-size: 36rpx; color: #ccc; }
+
+.input-with-unit {
+  display: flex;
+  align-items: center;
+}
+.input-with-unit .form-input { flex: 1; }
+.unit { font-size: 26rpx; color: #999; margin-left: 12rpx; white-space: nowrap; }
+
+.submit-btn {
+  margin: 40rpx 24rpx 0;
+  background: linear-gradient(135deg, #4169E1, #1E90FF);
+  border-radius: 50rpx;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn text { color: #fff; font-size: 32rpx; font-weight: 600; }
+
+.tips {
+  text-align: center;
+  padding: 24rpx 32rpx;
+  font-size: 24rpx;
+  color: #999;
+}

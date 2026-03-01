@@ -1,0 +1,122 @@
+page {
+  background: var(--color-bg-page);
+}
+.container {
+  min-height: 100vh;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--color-bg-card);
+  border-bottom: 1rpx solid var(--color-divider);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28rpx 0 20rpx;
+  font-size: 26rpx;
+  color: var(--color-text-hint);
+  position: relative;
+}
+.tab-active {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.tab-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: var(--color-primary);
+  border-radius: 2rpx;
+}
+
+/* 消息列表 */
+.msg-list { padding: 16rpx 0; }
+.msg-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24rpx;
+  background: var(--color-bg-card);
+  padding: 32rpx;
+  margin-bottom: 2rpx;
+}
+
+/* 图标 */
+.msg-icon-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 80rpx;
+  height: 80rpx;
+  background: var(--color-primary-bg);
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.msg-icon { font-size: 40rpx; }
+.unread-dot {
+  position: absolute;
+  top: 4rpx;
+  right: 4rpx;
+  width: 16rpx;
+  height: 16rpx;
+  background: var(--color-danger);
+  border-radius: 8rpx;
+  border: 2rpx solid #fff;
+}
+
+/* 消息内容 */
+.msg-body { flex: 1; min-width: 0; }
+.msg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+.msg-title {
+  font-size: 28rpx;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+.msg-title.unread {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+.msg-time {
+  font-size: 22rpx;
+  color: var(--color-text-hint);
+  flex-shrink: 0;
+  margin-left: 16rpx;
+}
+.msg-content {
+  font-size: 26rpx;
+  color: var(--color-text-hint);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200rpx;
+  gap: 20rpx;
+}
+.empty-icon { font-size: 100rpx; }
+.empty-text {
+  font-size: 30rpx;
+  color: var(--color-text-hint);
+}

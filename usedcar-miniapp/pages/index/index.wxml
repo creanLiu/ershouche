@@ -1,0 +1,79 @@
+<view class="page">
+
+  <!-- 顶部 Header：店铺 Logo -->
+  <view class="top-header" style="padding-top: {{statusBarHeight}}px;">
+    <image class="header-logo" src="/assets/logo.png" mode="aspectFit" />
+  </view>
+
+  <!-- Banner 轮播 -->
+  <swiper class="banner-swiper" autoplay circular indicator-dots
+    indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" interval="3000">
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <view class="banner-item" style="background:{{item.bg}}"
+        data-url="{{item.url}}" bindtap="onBannerTap">
+        <text class="banner-text">{{item.text}}</text>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 品牌横滑 -->
+  <view class="brand-section">
+    <view class="section-header">
+      <text class="section-title">热门品牌</text>
+    </view>
+    <scroll-view class="brand-scroll" scroll-x enable-flex>
+      <view class="brand-list">
+        <view
+          wx:for="{{brands}}"
+          wx:key="name"
+          class="brand-item"
+          data-brand="{{item.name}}"
+          bindtap="onBrandTap"
+        >
+          <view class="brand-icon-wrap" style="background:{{item.bg}}">
+            <text class="brand-logo" style="color:{{item.color}}">{{item.logo}}</text>
+          </view>
+          <text class="brand-name">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 公告 -->
+  <view class="notice-section">
+    <view class="notice-icon">📢</view>
+    <swiper class="notice-swiper" vertical autoplay circular interval="3000">
+      <swiper-item wx:for="{{notices}}" wx:key="id">
+        <text class="notice-text">{{item.text}}</text>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 推荐车辆 -->
+  <view class="recommend-section">
+    <view class="section-header">
+      <text class="section-title">推荐车辆</text>
+      <text class="section-more" bindtap="onViewAllTap">查看全部 ›</text>
+    </view>
+    <view class="vehicle-list">
+      <view
+        wx:for="{{recommendList}}"
+        wx:key="id"
+        class="vehicle-card"
+        data-id="{{item.id}}"
+        bindtap="onVehicleTap"
+      >
+        <image class="vehicle-cover" src="{{item.coverImageUrl}}" mode="aspectFill" />
+        <view class="vehicle-info">
+          <text class="vehicle-name">{{item.brand}} {{item.model}}</text>
+          <text class="vehicle-params">{{item.year}}年 / {{item.mileageW}}万km / {{item.displacement}} / {{item.city}}</text>
+          <view class="vehicle-price">
+            <text class="price-num">{{item.priceWan}}</text>
+            <text class="price-unit">万元</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

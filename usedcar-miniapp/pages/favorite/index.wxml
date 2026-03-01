@@ -1,0 +1,42 @@
+<view class="page">
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{list.length === 0}}">
+    <text class="empty-state-icon">❤️</text>
+    <text class="empty-state-text">暂无收藏</text>
+    <text class="empty-hint">快去收藏心仪的车辆吧</text>
+    <view class="go-browse btn btn-primary" bindtap="onGoBrowse">
+      <text>去逛逛</text>
+    </view>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="list" wx:else>
+    <view class="list-count">共 {{list.length}} 辆收藏</view>
+    <view
+      class="card"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onCardTap"
+    >
+      <image class="card-img" src="{{item.image}}" mode="aspectFill" />
+      <view class="card-info">
+        <text class="card-title">{{item.title}}</text>
+        <view class="card-tags">
+          <text class="card-tag">{{item.year}}</text>
+          <text class="card-tag">{{item.mileage}}</text>
+          <text class="card-tag">{{item.location}}</text>
+        </view>
+        <view class="card-price-row">
+          <text class="price-num">{{item.price}}</text>
+          <text class="price-unit">万元</text>
+        </view>
+      </view>
+      <view class="delete-btn" data-id="{{item.id}}" catchtap="onDeleteTap">
+        <text class="delete-icon">✕</text>
+      </view>
+    </view>
+  </view>
+
+</view>

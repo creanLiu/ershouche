@@ -1,0 +1,19 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+
+wx:
+  miniapp:
+    app-id: test-app-id
+    app-secret: test-app-secret
+
+jwt:
+  secret: usedcar-dev-jwt-secret-key-2024-must-be-at-least-256-bits-long
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+logging:
+  level:
+    com.usedcar: debug
